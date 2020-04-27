@@ -1,0 +1,1 @@
+# linkollector-mac
