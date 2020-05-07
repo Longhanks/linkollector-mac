@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8442EF324646B1400BF262A /* ViewControllerActing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442EF224646B1400BF262A /* ViewControllerActing.swift */; };
 		D87D738424573D090089A111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D738324573D090089A111 /* AppDelegate.swift */; };
 		D87D738624573D090089A111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D738524573D090089A111 /* ViewController.swift */; };
 		D87D738824573D0B0089A111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87D738724573D0B0089A111 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8442EF224646B1400BF262A /* ViewControllerActing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActing.swift; sourceTree = "<group>"; };
 		D87D738024573D090089A111 /* Linkollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87D738324573D090089A111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D87D738524573D090089A111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				D87D738324573D090089A111 /* AppDelegate.swift */,
 				D87D738524573D090089A111 /* ViewController.swift */,
+				D8442EF224646B1400BF262A /* ViewControllerActing.swift */,
 				D87D738724573D0B0089A111 /* Assets.xcassets */,
 				D87D738924573D0B0089A111 /* Main.storyboard */,
 				D87D738C24573D0B0089A111 /* Info.plist */,
@@ -135,6 +138,7 @@
 			files = (
 				D87D738624573D090089A111 /* ViewController.swift in Sources */,
 				D87D738424573D090089A111 /* AppDelegate.swift in Sources */,
+				D8442EF324646B1400BF262A /* ViewControllerActing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

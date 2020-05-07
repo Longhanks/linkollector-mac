@@ -674,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="linkollector_mac" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Linkollector" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -704,7 +704,7 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="linkollector_mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Linkollector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -729,6 +729,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <segue destination="hs2-qf-SU1" kind="sheet" id="cvO-ap-joc"/>
+                                </connections>
                             </button>
                             <customView hidden="YES" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="mmq-gs-4xV" userLabel="Placeholder View Top Upper">
                                 <rect key="frame" x="310" y="375" width="20" height="85"/>
@@ -773,10 +776,13 @@
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IXN-81-GCK" userLabel="Button Send">
                                 <rect key="frame" x="543" y="13" width="83" height="32"/>
-                                <buttonCell key="cell" type="push" title="Send..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQk-9p-dCl">
+                                <buttonCell key="cell" type="push" title="Send..." bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQk-9p-dCl">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <segue destination="hs2-qf-SU1" kind="sheet" id="FtK-ma-31t"/>
+                                </connections>
                             </button>
                             <box title="Message type" translatesAutoresizingMaskIntoConstraints="NO" id="JIm-TA-hkT">
                                 <rect key="frame" x="337" y="120" width="286" height="92"/>
@@ -866,11 +872,84 @@
                     <connections>
                         <outlet property="buttonMessageTypeText" destination="l9I-ff-ryE" id="GIP-y0-4OV"/>
                         <outlet property="buttonMessageTypeURL" destination="z84-mi-lbn" id="eiq-47-87d"/>
+                        <outlet property="buttonSend" destination="IXN-81-GCK" id="a7H-ui-SJ8"/>
+                        <outlet property="textFieldMessageContent" destination="H7m-UU-N9v" id="iO2-Xt-jrR"/>
+                        <outlet property="textFieldToDevice" destination="lQ8-LL-gWH" id="5ML-76-Wno"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="851"/>
         </scene>
+        <!--View Controller Acting-->
+        <scene sceneID="cuq-uF-Dcu">
+            <objects>
+                <viewController id="hs2-qf-SU1" customClass="ViewControllerActing" customModule="Linkollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="dP8-9i-Bex">
+                        <rect key="frame" x="0.0" y="0.0" width="312" height="140"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="27" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqd-Sf-9Ol">
+                                <rect key="frame" x="126" y="61" width="61" height="59"/>
+                                <subviews>
+                                    <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="HGh-uK-jwj">
+                                        <rect key="frame" x="22" y="43" width="16" height="16"/>
+                                    </progressIndicator>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hfC-7o-Dk9">
+                                        <rect key="frame" x="-2" y="0.0" width="65" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="doing sth" id="5Tt-mo-Hmf">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-nY-Ei9">
+                                <rect key="frame" x="115" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZjJ-fX-5NX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="hs2-qf-SU1" id="yPm-zw-8U6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fqd-Sf-9Ol" secondAttribute="trailing" constant="20" id="8FT-fC-sSZ"/>
+                            <constraint firstItem="Fqd-Sf-9Ol" firstAttribute="centerX" secondItem="dP8-9i-Bex" secondAttribute="centerX" id="8o8-uc-25c"/>
+                            <constraint firstItem="Fqd-Sf-9Ol" firstAttribute="top" secondItem="dP8-9i-Bex" secondAttribute="top" constant="20" id="KJP-a3-guB"/>
+                            <constraint firstAttribute="bottom" secondItem="kM8-nY-Ei9" secondAttribute="bottom" constant="20" id="Lnu-AL-yeO"/>
+                            <constraint firstItem="Fqd-Sf-9Ol" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dP8-9i-Bex" secondAttribute="leading" constant="20" id="Xe6-B9-59q"/>
+                            <constraint firstItem="kM8-nY-Ei9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dP8-9i-Bex" secondAttribute="leading" constant="20" id="fCL-sV-9WK"/>
+                            <constraint firstItem="kM8-nY-Ei9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Fqd-Sf-9Ol" secondAttribute="bottom" constant="20" id="nQW-8v-nlu"/>
+                            <constraint firstItem="kM8-nY-Ei9" firstAttribute="centerX" secondItem="dP8-9i-Bex" secondAttribute="centerX" id="rn8-tG-GpB"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kM8-nY-Ei9" secondAttribute="trailing" constant="20" id="sOe-8O-pIy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressIndicator" destination="HGh-uK-jwj" id="c8P-VB-d5o"/>
+                        <outlet property="textField" destination="hfC-7o-Dk9" id="f4c-tb-D0p"/>
+                    </connections>
+                </viewController>
+                <customObject id="XmH-k9-4qv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780.5" y="691"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FtK-ma-31t"/>
+    </inferredMetricsTieBreakers>
 </document>
