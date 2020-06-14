@@ -13,6 +13,8 @@ class ViewControllerActing: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let context = (NSApp.delegate as! AppDelegate).context!
     }
 
     override func viewWillAppear() {

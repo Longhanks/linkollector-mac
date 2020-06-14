@@ -16,6 +16,8 @@
 
 /* Begin PBXFileReference section */
 		D8442EF224646B1400BF262A /* ViewControllerActing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActing.swift; sourceTree = "<group>"; };
+		D844E78F24963C5D00C7210F /* dependencies.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = dependencies.sh; sourceTree = "<group>"; };
+		D844E79124963F8400C7210F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D87D738024573D090089A111 /* Linkollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87D738324573D090089A111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D87D738524573D090089A111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +25,7 @@
 		D87D738A24573D0B0089A111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D87D738C24573D0B0089A111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87D738D24573D0B0089A111 /* linkollector_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = linkollector_mac.entitlements; sourceTree = "<group>"; };
+		D8CCADA6249659AD00153FEF /* Linkollector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Linkollector-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,11 +39,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D844E79024963F6100C7210F /* extern */ = {
+			isa = PBXGroup;
+			children = (
+				D844E79124963F8400C7210F /* .gitkeep */,
+			);
+			path = extern;
+			sourceTree = "<group>";
+		};
+		D844E79324964DB000C7210F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D87D737724573D090089A111 = {
 			isa = PBXGroup;
 			children = (
+				D844E79024963F6100C7210F /* extern */,
 				D87D738224573D090089A111 /* linkollector-mac */,
 				D87D738124573D090089A111 /* Products */,
+				D844E79324964DB000C7210F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +82,8 @@
 				D87D738924573D0B0089A111 /* Main.storyboard */,
 				D87D738C24573D0B0089A111 /* Info.plist */,
 				D87D738D24573D0B0089A111 /* linkollector_mac.entitlements */,
+				D844E78F24963C5D00C7210F /* dependencies.sh */,
+				D8CCADA6249659AD00153FEF /* Linkollector-Bridging-Header.h */,
 			);
 			path = "linkollector-mac";
 			sourceTree = "<group>";
@@ -73,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D87D739024573D0B0089A111 /* Build configuration list for PBXNativeTarget "Linkollector" */;
 			buildPhases = (
+				D844E78E24963C1E00C7210F /* ShellScript */,
 				D87D737C24573D090089A111 /* Sources */,
 				D87D737D24573D090089A111 /* Frameworks */,
 				D87D737E24573D090089A111 /* Resources */,
@@ -98,6 +121,7 @@
 				TargetAttributes = {
 					D87D737F24573D090089A111 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -130,6 +154,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D844E78E24963C1E00C7210F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/env zsh $SRCROOT/linkollector-mac/dependencies.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D87D737C24573D090089A111 /* Sources */ = {
@@ -273,18 +318,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "linkollector-mac/linkollector_mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VU4Q278X2D;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				HEADER_SEARCH_PATHS = $SRCROOT/extern/libzmq/include;
 				INFOPLIST_FILE = "linkollector-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/build-libzmq/lib";
+				OTHER_LDFLAGS = (
+					"-lzmq",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.aschulz.linkollector-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "linkollector-mac/Linkollector-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -293,18 +349,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "linkollector-mac/linkollector_mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VU4Q278X2D;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				HEADER_SEARCH_PATHS = $SRCROOT/extern/libzmq/include;
 				INFOPLIST_FILE = "linkollector-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/build-libzmq/lib";
+				OTHER_LDFLAGS = (
+					"-lzmq",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.aschulz.linkollector-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "linkollector-mac/Linkollector-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
