@@ -25,9 +25,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
 
     func controlTextDidChange(_ notification: Notification) {
-        self.buttonSend.isEnabled =
-            !(self.textFieldToDevice.stringValue.isEmpty
-            || self.textFieldMessageContent.stringValue.isEmpty)
+        self.buttonSend.isEnabled = !(self.textFieldToDevice.stringValue.isEmpty || self.textFieldMessageContent.stringValue.isEmpty)
     }
 
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {

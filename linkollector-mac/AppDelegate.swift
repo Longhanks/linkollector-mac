@@ -13,9 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         context = nil
     }
 
-    func applicationShouldTerminateAfterLastWindowClosed(
-        _ sender: NSApplication
-    ) -> Bool {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         true
     }
 }

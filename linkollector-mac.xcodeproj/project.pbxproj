@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D82C50052505900600D48C2B /* ZmqWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C50042505900600D48C2B /* ZmqWrappers.swift */; };
 		D8442EF324646B1400BF262A /* ViewControllerActing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8442EF224646B1400BF262A /* ViewControllerActing.swift */; };
 		D87D738424573D090089A111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D738324573D090089A111 /* AppDelegate.swift */; };
 		D87D738624573D090089A111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D738524573D090089A111 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D82C50042505900600D48C2B /* ZmqWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZmqWrappers.swift; sourceTree = "<group>"; };
 		D8442EF224646B1400BF262A /* ViewControllerActing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActing.swift; sourceTree = "<group>"; };
 		D844E78F24963C5D00C7210F /* dependencies.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = dependencies.sh; sourceTree = "<group>"; };
 		D844E79124963F8400C7210F /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				D87D738D24573D0B0089A111 /* linkollector_mac.entitlements */,
 				D844E78F24963C5D00C7210F /* dependencies.sh */,
 				D8CCADA6249659AD00153FEF /* Linkollector-Bridging-Header.h */,
+				D82C50042505900600D48C2B /* ZmqWrappers.swift */,
 			);
 			path = "linkollector-mac";
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82C50052505900600D48C2B /* ZmqWrappers.swift in Sources */,
 				D87D738624573D090089A111 /* ViewController.swift in Sources */,
 				D87D738424573D090089A111 /* AppDelegate.swift in Sources */,
 				D8442EF324646B1400BF262A /* ViewControllerActing.swift in Sources */,
